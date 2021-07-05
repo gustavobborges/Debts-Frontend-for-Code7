@@ -1,0 +1,4 @@
+15min: create react project, organize folders and create git repository;
+01:20hrs: css e containers de clientes e debitos
+
+3hrs: consumo da api de clientes e listagem na tela com estilização
