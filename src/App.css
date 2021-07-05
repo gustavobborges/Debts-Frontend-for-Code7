@@ -9,6 +9,7 @@ html {
     padding: 0;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
+    text-decoration: none;
 }
 
 .main {
@@ -25,14 +26,21 @@ html {
     border-radius: .5em;
     min-height: 40em;
     padding: 0 .5em;
+    max-height: 40em;
 }
 
 .client_container {
     width: 25%;
+    overflow: auto;
+
 }
 
 .debit_container {
     width: 70%;
+}
+
+.button_create {
+    
 }
 
 

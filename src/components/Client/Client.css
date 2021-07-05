@@ -11,6 +11,10 @@
     filter: opacity(80%)
 }
 
+.selected {
+    filter: opacity(80%)
+}
+
 .client_content:last-child {
     margin-bottom: 1em;
 }

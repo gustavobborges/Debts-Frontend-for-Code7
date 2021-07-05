@@ -14,11 +14,10 @@ export default function Clients() {
     useEffect(()=> {
       api_clients.get()
         .then(response => {
-          console.log(response.data);
           setClients(response.data);
         })
         .catch((error) => {
-          console.log("Problema durante a consulta por clientes."+error);
+          console.log("Problema durante a consulta por clientes." + error);
         })
     }, [])
 
