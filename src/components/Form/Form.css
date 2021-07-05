@@ -20,6 +20,12 @@ input {
     margin: 1em 0;
 }
 
+.form_title {
+    margin-bottom: 1em;
+    font-size: 18px;
+    font-weight: 500;
+}
+
 .form_buttons {
     display: flex;
 }

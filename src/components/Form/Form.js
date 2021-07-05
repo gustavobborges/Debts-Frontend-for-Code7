@@ -58,10 +58,12 @@ export default function DebtForm() {
     
     return(
         <div className="form_debt">
+            {!values._id 
+                ? (<p className="form_title">Novo Compromisso</p>)
+                : (<p className="form_title">{values.motivo}</p>)
+            }
             <form onSubmit={onSubmit}>
-
                 <label htmlFor="idUsuario">Cliente *</label><br/>
-                {/* <input type="number" id="idUsuario" name="idUsuario" value={values.idUsuario} onChange={onChange}></input> */}
                 <select name="idUsuario" id="idUsuario" value={values.idUsuario} className="select_input" onChange={onChange}>
                     <option selected>Selecione</option>,
                     {clients.map((client) => [

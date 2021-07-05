@@ -8,7 +8,6 @@ import './Debts.css';
 import api_debts from '../../services/apiDebts';
 import api_clients from '../../services/apiDebts';
 
-
 export default function Debts() {
 
 	const [debts, setDebts] = useState([]);
