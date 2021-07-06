@@ -5,7 +5,7 @@ export default function Client(client) {
 	return (
 		<div className="client_content">
 			<div className="client_header">
-				<p>{client.client.name}</p>
+				<p>{client.client.name} | id:{client.client.id}</p>
 			</div>
 			<div className="client_info">
 				<div className="client_info_city">

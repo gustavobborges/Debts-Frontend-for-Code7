@@ -15,7 +15,6 @@ export default function Debts() {
 	useEffect(() => {
 		api_debts.get()
 			.then(response => {
-				console.log(response.data);
 				idClient
 				? setDebts(response.data.result.filter(debt => debt.idUsuario == idClient)) 
 				: setDebts(response.data.result);
@@ -24,10 +23,6 @@ export default function Debts() {
 				console.log("Problema durante a consulta por dívidas." + error);
 			})
 	}, []);
-
-	useEffect(() => {
-		api_clients.get().then(response => setClients(response.data));
-	}, [clients]);
 
 	async function DeleteDebt(id) {
 		await axios.delete(`https://provadev.xlab.digital/api/v1/divida/${id}?uuid=317a7ff8-7454-4131-8cc7-8ed2ebc141bd`)
@@ -69,7 +64,6 @@ export default function Debts() {
 			button: true,
 		}
 	]
-	console.log(debts)
 
 	return (
 		<div className="debts_list">
