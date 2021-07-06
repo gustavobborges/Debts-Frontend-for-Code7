@@ -5,6 +5,7 @@
     border-radius: 1em;
     background-color: #29d6b0;
     cursor: pointer;
+    color: black !important
 }
 
 .client_content:hover {
@@ -25,7 +26,8 @@
 }
 
 .client_info {
-    font-size: 14px
+    font-size: 14px;
+    font-weight: 400;
 
 }
 

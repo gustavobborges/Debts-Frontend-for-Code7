@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BsSearch, BsFillTrashFill } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import DataTable from 'react-data-table-component';
 import './Debts.css';
 import axios from 'axios';
@@ -8,6 +8,7 @@ import api_debts from '../../services/apiDebts';
 import api_clients from '../../services/apiDebts';
 
 export default function Debts() {
+	const {idClient} = useParams();
 	const [debts, setDebts] = useState([]);
 	const [clients, setClients] = useState([]);
 
@@ -15,7 +16,9 @@ export default function Debts() {
 		api_debts.get()
 			.then(response => {
 				console.log(response.data);
-				setDebts(response.data.result);
+				idClient
+				? setDebts(response.data.result.filter(debt => debt.idUsuario == idClient)) 
+				: setDebts(response.data.result);
 			})
 			.catch((error) => {
 				console.log("Problema durante a consulta por dívidas." + error);
@@ -66,11 +69,17 @@ export default function Debts() {
 			button: true,
 		}
 	]
+	console.log(debts)
 
 	return (
 		<div className="debts_list">
 			<div className="debts_header">
-				<h2>Débitos</h2>
+				{
+					idClient
+					? (<h2>Dívidas do Cliente {idClient}</h2>)
+					: (<h2>Todas as Dívidas</h2>)
+				}
+				
 			</div>
 			<div className="debts_content">
 				<DataTable

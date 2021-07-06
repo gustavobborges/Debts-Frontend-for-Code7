@@ -12,9 +12,7 @@ const initialValue = {
 }
 
 export default function DebtForm() {
-
     const {id} = useParams();
-
     const [values, setValues] = useState(id ? id : initialValue);
     const [clients, setClients] = useState([]);
     
@@ -22,12 +20,14 @@ export default function DebtForm() {
 
     useEffect(() => {
 		if (id) {
-            console.log('tem id');
             axios.get(`https://provadev.xlab.digital/api/v1/divida/${id}?uuid=317a7ff8-7454-4131-8cc7-8ed2ebc141bd`)
 				.then((response) => {
 					console.log(response.data.result);
 					setValues(response.data.result);
 				})
+                .catch((error) => {
+                    console.log("Erro durante a consulta pelo cliente. Erro: " + error);
+                  })
 		}
 	}, [id]);
 
@@ -35,14 +35,10 @@ export default function DebtForm() {
         api_clients.get().then(response => setClients(response.data));
     }, [clients]);
 
-    // const clients = api_clients.get().then(response => response.data);
-
-
     function onChange(event) {
 		const {name, value} = event.target;
 		setValues({...values, [name]: value});
 	}
-
 
     function onSubmit(event) {
         console.log('salvou')
@@ -59,7 +55,7 @@ export default function DebtForm() {
     return(
         <div className="form_debt">
             {!values._id 
-                ? (<p className="form_title">Novo Compromisso</p>)
+                ? (<p className="form_title">Nova Dívida</p>)
                 : (<p className="form_title">{values.motivo}</p>)
             }
             <form onSubmit={onSubmit}>

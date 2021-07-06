@@ -5,13 +5,14 @@ import ComponentDebts from '../components/Debts/Debts';
 import ComponentDebtForm from '../components/Form/Form';
 
 export default function Root() {
-    return(
-        <Router>
-            <Switch>
-                <Route path="/" component={ComponentDebts} exact></Route>
-                <Route path="/create" component={ComponentDebtForm}></Route>
-                <Route path="/edit/:id" component={ComponentDebtForm}></Route>
-            </Switch>
-        </Router>
-    );
+	return (
+		<Router>
+			<Switch>
+				<Route path="/" component={ComponentDebts} exact></Route>
+				<Route path="/client/:idClient" component={ComponentDebts}></Route>
+				<Route path="/create" component={ComponentDebtForm}></Route>
+				<Route path="/edit/:id" component={ComponentDebtForm}></Route>
+			</Switch>
+		</Router>
+	);
 }

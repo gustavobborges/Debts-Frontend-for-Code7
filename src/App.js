@@ -3,7 +3,6 @@ import Clients from './components/Clients/Clients';
 import Root from './pages/Root';
 import './App.css';
 
-
 function App() {
   return (
     <div className="main">

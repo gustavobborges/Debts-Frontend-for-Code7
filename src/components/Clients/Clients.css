@@ -2,3 +2,24 @@
     padding: .5em 0 .2em;
     border-bottom: .5px solid rgb(171, 171, 171);
 }
+
+.button_list_all {
+    width: 100%;
+    margin-top: .5em;
+}
+
+.button_list_all button {
+    width: 100%;
+    padding: .5em;
+    border-radius: .5em;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #29d6b0;
+    border: none !important;
+}
+
+.button_list_all button:hover {
+    filter:opacity(80%);
+}
+
+
