@@ -3,7 +3,37 @@
     border-bottom: .5px solid rgb(171, 171, 171);
 }
 
-.button_create {
-    background-color: green;
+.col_action {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_table {
+    padding: .5em;
+    border-radius: .5em;
+    color: white;
+    font-size: 14px;
+    margin: 0 .3em; 
     cursor: pointer;
+}
+
+.button_edit {
+    background-color: #29d6b0;
+}
+
+.button_delete {
+    background-color: red;
+}
+
+.debts_foot {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.button_create {
+    width: 10em;
+    background-color: green;
 }
