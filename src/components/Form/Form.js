@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, Link, useParams } from 'react-router-dom';
 import api_clients from '../../services/apiClients';
 import axios from 'axios';
-
 import './Form.css';
 
 const initialValue = {
@@ -67,8 +66,8 @@ export default function DebtForm() {
                     ])}
                 </select><br/>
 
-                <label htmlFor="motivo">Motivo</label>
-                <input as="textarea" name="motivo" id="motivo" value={values.motivo} onChange={onChange} />
+                <label htmlFor="motivo">Motivo *</label>
+                <input as="textarea" name="motivo" id="motivo" value={values.motivo} onChange={onChange} required/>
 
                 <label htmlFor="valor">Valor *</label>
                 <input type="number" name="valor" id="valor" value={values.valor} onChange={onChange} required/>

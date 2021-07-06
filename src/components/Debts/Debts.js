@@ -5,12 +5,10 @@ import DataTable from 'react-data-table-component';
 import './Debts.css';
 import axios from 'axios';
 import api_debts from '../../services/apiDebts';
-import api_clients from '../../services/apiDebts';
 
 export default function Debts() {
 	const {idClient} = useParams();
 	const [debts, setDebts] = useState([]);
-	const [clients, setClients] = useState([]);
 
 	useEffect(() => {
 		api_debts.get()
@@ -22,7 +20,7 @@ export default function Debts() {
 			.catch((error) => {
 				console.log("Problema durante a consulta por dívidas." + error);
 			})
-	}, []);
+	}, [idClient]);
 
 	async function DeleteDebt(id) {
 		await axios.delete(`https://provadev.xlab.digital/api/v1/divida/${id}?uuid=317a7ff8-7454-4131-8cc7-8ed2ebc141bd`)
@@ -73,11 +71,10 @@ export default function Debts() {
 					? (<h2>Dívidas do Cliente {idClient}</h2>)
 					: (<h2>Todas as Dívidas</h2>)
 				}
-				
 			</div>
 			<div className="debts_content">
 				<DataTable
-					title="Tabela de Débitos"
+					title="Tabela de Dívidas"
 					columns={columns}
 					data={debts}
 					defaultSortField="_id"

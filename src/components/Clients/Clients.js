@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-
 import Client from '../Client/Client'
 import './Clients.css';
 import api_clients from '../../services/apiClients';

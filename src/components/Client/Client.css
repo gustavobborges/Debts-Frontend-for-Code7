@@ -1,5 +1,4 @@
 .client_content {
-    /* border: 1px rgb(120, 120, 120) solid; */
     padding: .5em;
     margin-top: 1em;
     border-radius: 1em;
@@ -23,22 +22,18 @@
 .client_header {
    font-size: 18px;
    font-weight: 500;
+   display: flex;
+   justify-content: space-between;
+}
+
+.client_id {
+    font-size: 12px;
+    padding: .5em .5em 0 0;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5em;
 }
 
 .client_info {
     font-size: 14px;
     font-weight: 400;
-
-}
-
-.client_info_city {
-
-}
-
-.client_info_phone {
-
-}
-
-.client_info_company {
-
 }
