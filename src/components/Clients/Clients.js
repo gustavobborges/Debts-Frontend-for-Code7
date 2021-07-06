@@ -16,6 +16,8 @@ export default function Clients() {
       })
   }, [])
 
+
+  //TODO: ROTAS VIA react-router-dom para atualizar componentes externos
   function onClick(id) {
     window.location.href = `/client/${id}`;
   };

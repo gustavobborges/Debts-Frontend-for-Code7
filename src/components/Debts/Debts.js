@@ -36,7 +36,7 @@ export default function Debts() {
 	const columns = [
 		{
 			name: "Cliente",
-			selector: (row) => row['idUsuario'],
+			selector: (row) => row['idUsuario'], //TODO: FAZER JOIN ENTRE OS OBJETOS PARA LISTAR O NOME DO CLIENTE
 			sortable: true,
 		},
 		{
